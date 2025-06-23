@@ -3,6 +3,8 @@ import requests
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(layout="wide")
+
 
 def works_to_dataframe(works):
     records = []
