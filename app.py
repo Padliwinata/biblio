@@ -103,10 +103,11 @@ def get_sample(topik_param, tahun_param, bahasa_param):
     return res.json()
 
 
-data = get_sample(topik_str, tahun_str, bahasa_str)
-data_df = works_to_dataframe(data['results'])
+if topik_str and tahun_str and bahasa_str:
+    data = get_sample(topik_str, tahun_str, bahasa_str)
+    data_df = works_to_dataframe(data['results'])
 
-st.write(f"Total jumlah data {data['meta']['count']}")
-st.dataframe(data_df)
+    st.write(f"Total jumlah data {data['meta']['count']}")
+    st.dataframe(data_df)
 
 
